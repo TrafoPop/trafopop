@@ -1,6 +1,6 @@
 #include <Adafruit_NeoPixel.h>
 
-#define NUM 124
+#define NUM 118
 
 #define PIN 16
 
@@ -108,30 +108,30 @@ inline struct CGPoint normalizedPoint(byte index)
 {
   CGPoint point;
 
-  if (index < 24)
+  if (index < 22)
   {
     point.x = -2;
-    point.y = index;
+    point.y = index + 1;
   }
-  else if (index < 49)
+  else if (index < 46)
   {
     point.x = -1;
-    point.y = 48 - index;
+    point.y = 45 - index;
   }
-  else if (index < 75)
+  else if (index < 71)
   {
     point.x = 0;
-    point.y = index - 49;
+    point.y = index - 46;
   }
-  else if (index < 100)
+  else if (index < 95)
   {
     point.x = 1;
-    point.y = 99 - index;
+    point.y = 94 - index;
   }
   else
   {
     point.x = 2;
-    point.y = index - 100;
+    point.y = index - 95;
   }
 
   return point;
