@@ -1,6 +1,6 @@
 #include <SPI.h>
 
-#define NUM 50
+#define NUM 100
 
 typedef struct color
 {
@@ -438,6 +438,24 @@ inline void draw3(float frameCount)
   }
 }
 
+Color blue = {0, 0, 0xFF};
+Color black = {0, 0, 0};
+
+inline void drawTest(long frameCount)
+{
+  for (byte i = 0; i < NUM; i++)
+  {
+    if (i == (frameCount*0.01)  % NUM)
+    {
+      pixels[i] = blue;
+    }
+    else
+    {
+      pixels[i] = black;
+    }
+  }
+}
+
 inline void drawWalker(long frameCount)
 {
   float time = frameCount * 0.03;
@@ -485,6 +503,12 @@ void loop()
   {
     for (int i = 0; i < 2000; i++)
     {
+      drawTest(framecount++);
+      show((byte *)pixels, sizeof(pixels));
+    }
+    /*
+    for (int i = 0; i < 2000; i++)
+    {
       drawWalker(framecount++);
       show((byte *)pixels, sizeof(pixels));
     }
@@ -506,6 +530,7 @@ void loop()
       draw(framecount++);
       show((byte *)pixels, sizeof(pixels));
     }
+    */
   }
 }
 
