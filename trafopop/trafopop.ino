@@ -445,7 +445,7 @@ inline void drawTest(long frameCount)
 {
   for (byte i = 0; i < NUM; i++)
   {
-    if (i == (frameCount*0.01)  % NUM)
+    if (i == (long)(frameCount*0.01)  % NUM)
     {
       pixels[i] = blue;
     }
