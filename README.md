@@ -38,7 +38,7 @@ http://www.ftdichip.com/Drivers/VCP.htm
 In the Arduino Software in the Tools menu select your Board: Arduino Nano w/ ATmega328
 And select the serial port: /dev/tty.usbserial… (on Mac)
 
-For Workshop #3:
+Since Workshop #3:
 In the Arduino Software in the Tools menu select your Board: Arduino Leonardo
 And select the serial port: /dev/tty.usbmodem… (on Mac)
 
